@@ -14,3 +14,7 @@ class User(BaseModel):
 async def create_user(user: User):
     users.append(user)
     return {"message": "Usuario guardado correctamente", "user": user}
+
+@app.get("/user")
+async def get_users():
+    return {"users": users}
